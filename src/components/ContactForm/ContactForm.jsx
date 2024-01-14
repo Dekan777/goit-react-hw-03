@@ -16,10 +16,6 @@ const FeedbackSchema = Yup.object().shape({
     .required('Required for entry'),
 });
 
-// поля повинні бути обов'язковими для заповнення
-// мінімальна кількість символів - 3
-// максимальна кількість символів - 50
-
 const initialValues = {
   name: '',
   number: '',

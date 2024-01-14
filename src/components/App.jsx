@@ -30,6 +30,11 @@ export const App = () => {
     actions.resetForm();
   };
 
+  const handleContactDelete = name => {
+    const updatedContacts = contacts.filter(contact => contact.name !== name);
+    setContacts(updatedContacts);
+  };
+
   return (
     <div>
       <li>
@@ -45,7 +50,7 @@ export const App = () => {
       </li>
 
       <li>
-        <ContactList value={filteredContacts} />
+        <ContactList value={filteredContacts} onDelete={handleContactDelete} />
       </li>
     </div>
   );
