@@ -33,11 +33,11 @@ export const App = () => {
   return (
     <div>
       <li>
-        <ContactForm handleSubmitForm={handleSubmit} />
+        <Phonebook text="Phonebook" />
       </li>
 
       <li>
-        <Phonebook text="Phonebook" />
+        <ContactForm handleSubmitForm={handleSubmit} />
       </li>
 
       <li>
