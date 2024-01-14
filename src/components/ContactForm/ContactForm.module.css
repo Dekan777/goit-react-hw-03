@@ -1,0 +1,4 @@
+.classForm {
+  display: flex;
+  flex-direction: column;
+}
