@@ -38,8 +38,8 @@ export const ContactList = ({ value, onDelete }) => {
   const nameFieldId = useId();
 
   const handleDeleteClick = name => {
-    console.log('id:', name);
-    onDelete(name); // Вызывает функцию удаления из компонента App
+    // console.log('id:', name);
+    onDelete(name);
   };
 
   return (
