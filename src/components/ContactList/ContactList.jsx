@@ -4,6 +4,7 @@ import { useId } from 'react';
 
 export const ContactList = ({ value }) => {
   const nameFieldId = useId();
+
   return (
     <div>
       {value.map(({ name, number }, id) => (

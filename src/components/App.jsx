@@ -1,6 +1,5 @@
 import './App.css';
 import { useState } from 'react';
-// import { useId } from 'react';
 import { nanoid } from 'nanoid';
 import { Phonebook } from './Phonebook/Phonebook';
 import { ContactList } from './ContactList/ContactList';
@@ -10,32 +9,27 @@ import { ContactForm } from './ContactForm/ContactForm';
 
 export const App = () => {
   const [searchValue, setSearchValue] = useState('');
+
+  const [contacts, setContacts] = useState(InitialContacts);
   const handleSearchChange = evt => {
     setSearchValue(evt.target.value);
   };
 
+  const filteredContacts = contacts.filter(
+    contact => contact.name && contact.name.toLowerCase().includes(searchValue.toLowerCase())
+  );
+
   const handleSubmit = (values, actions) => {
     const newObjectId = nanoid();
-
-    // Create a new contact with the updated values
     const newContact = {
       Id: newObjectId,
       ...values,
     };
 
-    // Update the contacts state with the new contact
-    setContacts(prevContacts => [...prevContacts, newContact]);
-
-    // Reset the form
+    setContacts([...contacts, newContact]);
     actions.resetForm();
   };
-  const [contacts, setContacts] = useState(InitialContacts);
 
-  const filteredContacts = contacts.filter(
-    contact => contact.name && contact.name.toLowerCase().includes(searchValue.toLowerCase())
-  );
-  // console.log(contacts);
-  console.log('refer', filteredContacts);
   return (
     <div>
       <li>
