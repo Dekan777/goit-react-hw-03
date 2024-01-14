@@ -1,19 +1,13 @@
 import './App.css';
 import { useState } from 'react';
-import { useId } from 'react';
+// import { useId } from 'react';
 import { Phonebook } from './Phonebook/Phonebook';
 import { ContactList } from './ContactList/ContactList';
-// import { SearchBox } from './SearchBox/SearchBox';
+import { SearchBox } from './SearchBox/SearchBox';
+import { InitialContacts } from './data/InitialContacts';
 
 export const App = () => {
-  const initialContacts = [
-    { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-    { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-    { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-    { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-  ];
-
-  const [contacts] = useState(initialContacts);
+  const [contacts] = useState(InitialContacts);
   const [searchValue, setSearchValue] = useState('');
 
   const handleSearchChange = evt => {
@@ -26,15 +20,17 @@ export const App = () => {
 
   return (
     <div>
-      <Phonebook text="Phonebook" />
+      <li>
+        <Phonebook text="Phonebook" />
+      </li>
 
-      <div>
-        <input type="text" id={useId()} value={searchValue} onChange={handleSearchChange} />
-      </div>
+      <li>
+        <SearchBox value={searchValue} change={handleSearchChange} />
+      </li>
 
-      <div>
+      <li>
         <ContactList value={filteredContacts} />
-      </div>
+      </li>
     </div>
   );
 };

@@ -1,18 +1,11 @@
-// import { useId } from 'react';
-// import { useState } from 'react';
+import { useId } from 'react';
 
-// export const SearchBox = () => {
-//   const id = useId();
-//   const [inputValue, setInputValue] = useState('');
+export const SearchBox = ({ value, change }) => {
+  const id = useId();
 
-//   const handleChange = evt => {
-//     setInputValue(evt.target.value);
-//   };
-
-//   return (
-//     <div>
-//       <input type="text" id={id} value={inputValue} onChange={handleChange} />
-//       <p>{inputValue}</p>
-//     </div>
-//   );
-// };
+  return (
+    <div>
+      <input type="text" id={id} value={value} onChange={change} />
+    </div>
+  );
+};
