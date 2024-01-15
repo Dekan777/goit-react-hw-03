@@ -32,7 +32,9 @@ export const App = () => {
       ...values,
     };
 
-    const isContactExists = contacts.some(contact => contact.name === newContact.name);
+    const isContactExists = contacts.some(
+      contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
+    );
 
     if (isContactExists) {
       Notiflix.Notify.info('A contact with such data already exists. Enter a different name');
