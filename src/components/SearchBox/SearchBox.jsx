@@ -6,7 +6,7 @@ export const SearchBox = ({ value, change }) => {
 
   return (
     <div>
-      <p>Find contacts by name</p>
+      <p className={css.pItem}>Find contacts by name</p>
       <input className={css.input} type="text" id={id} value={value} onChange={change} />
     </div>
   );

@@ -14,7 +14,7 @@ export const ContactList = ({ value, onDelete }) => {
     <div>
       {value.map(({ name, number }, id) => (
         <div className={css.conteyner} key={id}>
-          <p>
+          <p className={css.pIttem}>
             <BsFillPersonFill className={css.myIcon} size="20" />
             {name}
           </p>
