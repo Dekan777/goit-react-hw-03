@@ -43,17 +43,18 @@ export const ContactForm = ({ handleSubmitForm }) => {
       validationSchema={FeedbackSchema}
     >
       <Form className={css.classForm}>
-        <label htmlFor={nameFieldId}>Username</label>
-        <Field type="text" name="name" id={nameFieldId} />
+        {/* <label htmlFor={nameFieldId}>Username</label> */}
+        <Field type="text" name="name" id={nameFieldId} placeholder="Username" />
         <ErrorMessage name="name" component="div" className={css.error} />
 
-        <label htmlFor={numberFieldId}>Number</label>
+        {/* <label htmlFor={numberFieldId}>Number</label> */}
 
         <Field
           type="text"
           name="number"
           id={numberFieldId}
           as={NumberMask} // Use the NumberMask component for the "number" field
+          placeholder="Number"
         />
         <p>Format: 123-45-67</p>
         <ErrorMessage name="number" component="div" className={css.error} />
