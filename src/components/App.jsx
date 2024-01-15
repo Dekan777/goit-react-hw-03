@@ -35,7 +35,7 @@ export const App = () => {
     const isContactExists = contacts.some(contact => contact.name === newContact.name);
 
     if (isContactExists) {
-      Notiflix.Notify.info('A contact with such data already exists');
+      Notiflix.Notify.info('A contact with such data already exists. Enter a different name');
     } else {
       setContacts([...contacts, newContact]);
       actions.resetForm();
