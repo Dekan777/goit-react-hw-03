@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import { Phonebook } from './Phonebook/Phonebook';
 import { ContactList } from './ContactList/ContactList';
@@ -8,9 +8,14 @@ import { InitialContacts } from './data/InitialContacts';
 import { ContactForm } from './ContactForm/ContactForm';
 
 export const App = () => {
+  const parsedData = JSON.parse(window.localStorage.getItem('saved-value'));
+  const [contacts, setContacts] = useState(parsedData ? parsedData : InitialContacts);
   const [searchValue, setSearchValue] = useState('');
 
-  const [contacts, setContacts] = useState(InitialContacts);
+  useEffect(() => {
+    window.localStorage.setItem('saved-value', JSON.stringify(contacts));
+  }, [contacts]);
+
   const handleSearchChange = evt => {
     setSearchValue(evt.target.value);
   };
