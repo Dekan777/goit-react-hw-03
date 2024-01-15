@@ -1,6 +1,7 @@
 import { BsFillPersonFill, BsFillTelephoneFill } from 'react-icons/bs';
 import css from './ContactList.module.css';
 import { useId } from 'react';
+import { MdDelete } from 'react-icons/md';
 
 export const ContactList = ({ value, onDelete }) => {
   const nameFieldId = useId();
@@ -22,6 +23,7 @@ export const ContactList = ({ value, onDelete }) => {
             <BsFillTelephoneFill className={css.myIcon} size="16" />
             {number}
           </p>
+
           <button className={css.button} onClick={() => handleDeleteClick(name)} id={nameFieldId}>
             Delete
           </button>
