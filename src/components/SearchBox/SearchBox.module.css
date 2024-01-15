@@ -1,0 +1,7 @@
+.input {
+  margin-bottom: 10px; /* Отступ между инпутами */
+  padding: 8px; /* Внутренний отступ для инпутов */
+  border: 1px solid #ccc; /* Граница вокруг инпутов */
+  border-radius: 4px; /* Скругление углов инпутов */
+  /* margin-top: 10px; */
+}

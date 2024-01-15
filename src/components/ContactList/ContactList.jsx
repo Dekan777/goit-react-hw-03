@@ -13,16 +13,16 @@ export const ContactList = ({ value, onDelete }) => {
   return (
     <div>
       {value.map(({ name, number }, id) => (
-        <div key={id}>
+        <div className={css.conteyner} key={id}>
           <p>
             <BsFillPersonFill className={css.myIcon} size="20" />
             {name}
           </p>
-          <p>
+          <p className={css.par}>
             <BsFillTelephoneFill className={css.myIcon} size="16" />
             {number}
           </p>
-          <button onClick={() => handleDeleteClick(name)} id={nameFieldId}>
+          <button className={css.button} onClick={() => handleDeleteClick(name)} id={nameFieldId}>
             Delete
           </button>
         </div>

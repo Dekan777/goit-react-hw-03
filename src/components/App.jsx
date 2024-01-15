@@ -42,21 +42,13 @@ export const App = () => {
 
   return (
     <div>
-      <li>
-        <Phonebook text="Phonebook" />
-      </li>
+      <Phonebook text="Phonebook" />
 
-      <li>
-        <ContactForm handleSubmitForm={handleSubmit} />
-      </li>
+      <ContactForm handleSubmitForm={handleSubmit} />
 
-      <li>
-        <SearchBox value={searchValue} change={handleSearchChange} />
-      </li>
+      <SearchBox value={searchValue} change={handleSearchChange} />
 
-      <li>
-        <ContactList value={filteredContacts} onDelete={handleContactDelete} />
-      </li>
+      <ContactList value={filteredContacts} onDelete={handleContactDelete} />
     </div>
   );
 };
