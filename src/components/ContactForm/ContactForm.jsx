@@ -24,11 +24,7 @@ const FeedbackSchema = Yup.object().shape({
     .min(3, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required for entry'),
-  number: Yup.string()
-    // .matches(/^[0-9\s-]+$/, 'Must be only digits and may include spaces and hyphens')
-    .min(3, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Required for entry'),
+  number: Yup.string().min(3, 'Too Short!').max(50, 'Too Long!').required('Required for entry'),
 });
 
 const initialValues = {
@@ -52,12 +48,14 @@ export const ContactForm = ({ handleSubmitForm }) => {
         <ErrorMessage name="name" component="div" className={css.error} />
 
         <label htmlFor={numberFieldId}>Number</label>
+
         <Field
           type="text"
           name="number"
           id={numberFieldId}
           as={NumberMask} // Use the NumberMask component for the "number" field
         />
+        <p>Format: 123-45-67</p>
         <ErrorMessage name="number" component="div" className={css.error} />
 
         <button type="submit">Submit</button>
