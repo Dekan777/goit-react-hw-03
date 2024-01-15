@@ -23,8 +23,11 @@ const FeedbackSchema = Yup.object().shape({
     .matches(/^[a-zA-Z\s-]+$/, 'Must contain only letters, spaces, and hyphens')
     .min(3, 'Too Short!')
     .max(50, 'Too Long!')
-    .required('Required for entry'),
-  number: Yup.string().min(3, 'Too Short!').max(50, 'Too Long!').required('Required for entry'),
+    .required('Username required for entry'),
+  number: Yup.string()
+    .min(3, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Number required for entry'),
 });
 
 const initialValues = {
@@ -44,11 +47,11 @@ export const ContactForm = ({ handleSubmitForm }) => {
     >
       <Form className={css.classForm}>
         {/* <label htmlFor={nameFieldId}>Username</label> */}
-        <Field type="text" name="name" id={nameFieldId} placeholder="Username" />
         <ErrorMessage name="name" component="div" className={css.error} />
+        <Field type="text" name="name" id={nameFieldId} placeholder="Username" />
 
         {/* <label htmlFor={numberFieldId}>Number</label> */}
-
+        <ErrorMessage name="number" component="div" className={css.error} />
         <Field
           type="text"
           name="number"
@@ -56,8 +59,8 @@ export const ContactForm = ({ handleSubmitForm }) => {
           as={NumberMask} // Use the NumberMask component for the "number" field
           placeholder="Number"
         />
+
         <p>Format: 123-45-67</p>
-        <ErrorMessage name="number" component="div" className={css.error} />
 
         <button type="submit">Submit</button>
       </Form>

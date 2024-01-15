@@ -32,4 +32,8 @@
 
 .classForm p {
   margin-bottom: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(121, 120, 119);
+  padding-left: 9px;
 }
