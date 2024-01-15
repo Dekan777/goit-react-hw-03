@@ -1,11 +1,11 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 10px;
   flex-direction: column;
   display: flex;
-  gap: 10px;
-  height: 700px;
+  /* gap: 10px;
+  height: 700px; */
 }
 
 li {

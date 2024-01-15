@@ -1,7 +1,8 @@
 .input {
   margin-bottom: 10px; /* Отступ между инпутами */
-  padding: 8px; /* Внутренний отступ для инпутов */
+  padding: 8px;
   border: 1px solid #ccc; /* Граница вокруг инпутов */
   border-radius: 4px; /* Скругление углов инпутов */
   /* margin-top: 10px; */
+  margin-bottom: 20px;
 }

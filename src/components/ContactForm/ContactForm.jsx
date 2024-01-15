@@ -6,12 +6,12 @@ import css from './ContactForm.module.css';
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string()
-    .matches(/^[a-zA-Z]+$/, 'Must contain only letters')
+    .matches(/^[a-zA-Z\s]+$/, 'Must contain only letters and spaces')
     .min(3, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required for entry'),
   number: Yup.string()
-    .matches(/^[0-9]+$/, 'Must be only digits')
+    .matches(/^[0-9-]+$/, 'Must be only digits and may include hyphen')
     .min(3, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required for entry'),
