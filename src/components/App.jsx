@@ -1,4 +1,5 @@
 import './App.css';
+import Notiflix from 'notiflix';
 import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import { Phonebook } from './Phonebook/Phonebook';
@@ -31,8 +32,14 @@ export const App = () => {
       ...values,
     };
 
-    setContacts([...contacts, newContact]);
-    actions.resetForm();
+    const isContactExists = contacts.some(contact => contact.name === newContact.name);
+
+    if (isContactExists) {
+      Notiflix.Notify.info('A contact with such data already exists');
+    } else {
+      setContacts([...contacts, newContact]);
+      actions.resetForm();
+    }
   };
 
   const handleContactDelete = name => {
