@@ -48,20 +48,23 @@ export const ContactForm = ({ handleSubmitForm }) => {
       <Form className={css.classForm}>
         {/* <label htmlFor={nameFieldId}>Username</label> */}
         <ErrorMessage name="name" component="div" className={css.error} />
-        <Field type="text" name="name" id={nameFieldId} placeholder="Username" />
-
+        <Field
+          type="text"
+          name="name"
+          id={nameFieldId}
+          placeholder="Username"
+        />
         {/* <label htmlFor={numberFieldId}>Number</label> */}
         <ErrorMessage name="number" component="div" className={css.error} />
+
         <Field
           type="text"
           name="number"
           id={numberFieldId}
-          as={NumberMask} // Use the NumberMask component for the "number" field
+          as={NumberMask}
           placeholder="Number"
         />
-
         <p>Format: 123-45-67</p>
-
         <button type="submit">Submit</button>
       </Form>
     </Formik>

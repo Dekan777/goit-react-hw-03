@@ -10,7 +10,9 @@ import { ContactForm } from './ContactForm/ContactForm';
 
 export const App = () => {
   const parsedData = JSON.parse(window.localStorage.getItem('saved-value'));
-  const [contacts, setContacts] = useState(parsedData ? parsedData : InitialContacts);
+  const [contacts, setContacts] = useState(
+    parsedData ? parsedData : InitialContacts
+  );
   const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
@@ -22,7 +24,9 @@ export const App = () => {
   };
 
   const filteredContacts = contacts.filter(
-    contact => contact.name && contact.name.toLowerCase().includes(searchValue.toLowerCase())
+    contact =>
+      contact.name &&
+      contact.name.toLowerCase().includes(searchValue.toLowerCase())
   );
 
   const handleSubmit = (values, actions) => {
@@ -37,7 +41,9 @@ export const App = () => {
     );
 
     if (isContactExists) {
-      Notiflix.Notify.info('A contact with such data already exists. Enter a different name');
+      Notiflix.Notify.info(
+        'A contact with such data already exists. Enter a different name'
+      );
     } else {
       setContacts([...contacts, newContact]);
       actions.resetForm();
